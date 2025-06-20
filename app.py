@@ -198,11 +198,11 @@ st.markdown('<h1 class="main-title">🚗 Smart Parking System</h1>', unsafe_allo
 st.markdown('<p class="subtitle">Status slot parkir real-time</p>', unsafe_allow_html=True)
 
 # Tombol refresh manual yang di-center
-# col1, col2, col3 = st.columns([1, 2, 1])
-# with col1:
-#     if st.button("🔄 Refresh Status", type="primary") or rerun:
-#         st.rerun()
-#         rerun = False
+col1, col2, col3 = st.columns([1, 2, 1])
+with col1:
+    if st.button("🔄 Refresh Status", type="primary") or rerun:
+        st.rerun()
+        rerun = False
 
 # Ambil data terbaru dari thread-safe storage
 current_data = st.session_state.thread_data.get_data()
@@ -269,8 +269,8 @@ with col2:
     
 # Footer spacing
 st.markdown("<br><br>", unsafe_allow_html=True)
-time.sleep(1.5)
-st.rerun()
+# time.sleep(1.5)
+# st.rerun()
 # Debug information (optional - uncomment if needed)
 # with st.expander("🔍 Debug Information"):
 #     st.json(current_data["parking_state"])
