@@ -200,7 +200,7 @@ st.markdown('<p class="subtitle">Status slot parkir real-time</p>', unsafe_allow
 # Tombol refresh manual yang di-center
 col1, col2, col3 = st.columns([1, 2, 1])
 with col1:
-    if st.button("🔄 Refresh Status", type="primary") or rerun:
+    if st.button("🔄 Refresh Status", type="primary"):
         st.rerun()
         rerun = False
 
