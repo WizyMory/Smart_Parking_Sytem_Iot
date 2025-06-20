@@ -259,6 +259,13 @@ with main_container:
 # Spacing
 st.markdown("<br>", unsafe_allow_html=True)
 
+mqtt_status = "🟢 Connected" if current_data["mqtt_connected"] else "🔴 Disconnected"
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    if current_data["mqtt_connected"]:
+        st.success(f"{mqtt_status} to MQTT Broker")
+    else:
+        st.error(f"{mqtt_status} to MQTT Broker")
     
 # Footer spacing
 st.markdown("<br><br>", unsafe_allow_html=True)
