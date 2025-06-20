@@ -7,11 +7,11 @@ import json
 import time
 
 # Konfigurasi MQTT
-MQTT_BROKER = "7778f6eeb73a4c318a2c8500540ad455.s1.eu.hivemq.cloud"
+MQTT_BROKER = "f6cac07c41f14b0cb9dc708769c192b1.s1.eu.hivemq.cloud"
 MQTT_PORT = 8883
-MQTT_TOPIC = "data/coba"
-MQTT_USERNAME = "wizymory"
-MQTT_PASSWORD = "Wfauzi15"
+MQTT_TOPIC = "esp32/ir_sensor"
+MQTT_USERNAME = "jujundial"
+MQTT_PASSWORD = "Jujundial_7"
 
 # rerun = False
 
