@@ -269,7 +269,7 @@ with col2:
     
 # Footer spacing
 st.markdown("<br><br>", unsafe_allow_html=True)
-time.sleep(0.5)
+time.sleep(1.5)
 st.rerun()
 # Debug information (optional - uncomment if needed)
 # with st.expander("🔍 Debug Information"):
