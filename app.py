@@ -268,8 +268,6 @@ with col2:
     else:
         st.error(f"{mqtt_status} to MQTT Broker")
     
-    st.info("💡 Klik refresh untuk memperbarui status parkiran.")
-
 # Footer spacing
 st.markdown("<br><br>", unsafe_allow_html=True)
 time.sleep(0.5)
