@@ -19,7 +19,7 @@ MQTT_PASSWORD = "Jujundial_7"
 if 'shared_data' not in st.session_state:
     st.session_state.shared_data = {
         "parking_state": {
-            "lantai1": ["Kosong", "Kosong", "Kosong", "Kosong", "Kosong", "Kosong", "Kosong"],  # 3 slot selalu kosong, 2 dari broker
+            "lantai1": ["Kosong", "Kosong", "Kosong", "Kosong", "Kosong", "Kosong"],  # 3 slot selalu kosong, 2 dari broker
             "lantai2": ["Kosong", "Kosong", "Kosong", "Kosong"]  # 4 slot dari broker
         },
         "last_update": time.time(),
@@ -32,7 +32,7 @@ class ThreadSafeData:
         self.lock = threading.Lock()
         self.data = {
             "parking_state": {
-                "lantai1": ["Kosong", "Kosong", "Kosong", "Kosong", "Kosong", "Kosong", "Kosong"],
+                "lantai1": ["Kosong", "Kosong", "Kosong", "Kosong", "Kosong", "Kosong"],
                 "lantai2": ["Kosong", "Kosong", "Kosong", "Kosong"]
             },
             "last_update": time.time(),
@@ -41,9 +41,9 @@ class ThreadSafeData:
     
     def update_parking_data(self, new_data):
         with self.lock:
-            if "lantai1" in new_data and len(new_data["lantai1"]) == 2:
-                self.data["parking_state"]["lantai1"][5] = "Terisi" if new_data["lantai1"][0] else "Kosong"
-                self.data["parking_state"]["lantai1"][6] = "Terisi" if new_data["lantai1"][1] else "Kosong"
+            if "lantai1" in new_data and len(new_data["lantai1"]) == 6:
+                for i in range(6):
+                    self.data["parking_state"]["lantai1"][i] = "Terisi" if new_data["lantai1"][i] else "Kosong"
                 
             if "lantai2" in new_data and len(new_data["lantai2"]) == 4:
                 for i in range(4):
